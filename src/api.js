@@ -9,7 +9,7 @@ const api1 = axios.create({
 });
 
 export const todoApi = {
-  getAllTodo: () => api.get("todo/list"),
+  getAllTodo: () => api1.get("todo/list"),
   createTodo: () => api.post("todo")
 };
 
