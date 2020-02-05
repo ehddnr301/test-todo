@@ -8,6 +8,8 @@ import {
 import Home from "./Routes/Home";
 import Login from "./Routes/Login";
 import Join from "./Routes/Join";
+import Detail from "./Routes/Detail";
+import User from "./Routes/User";
 
 export default () => (
   <Router>
@@ -16,6 +18,8 @@ export default () => (
         <Route path="/" exact component={Home} />
         <Route path="/login" exact component={Login} />
         <Route path="/join" exact component={Join} />
+        <Route path="/todo/:id" component={Detail}></Route>
+        <Route path="/user/:id" component={User}></Route>
         <Redirect from="*" to="/" />
       </Switch>
     </>

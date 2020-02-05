@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { userApi, todoApi } from "../api";
+import { todoApi, userApi1 } from "../api";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [todo, setTodo] = useState(null);
@@ -8,6 +9,8 @@ const Home = () => {
   const didMount = async () => {
     try {
       const { data: todo } = await todoApi.getAllTodo();
+      const { data } = await userApi1.user();
+      console.log(data);
       setTodo(todo);
       // todo.map(t => console.log(t.title));
     } catch {
@@ -27,14 +30,17 @@ const Home = () => {
         <input type="text" name="todo" placeholder="todo"></input>
         <input type="submit" value="생성"></input>
       </form>
+
       <div>
         {todo ? (
           <div>
             {todo.map(t => {
               return (
                 <>
-                  <h5>title : {t.title}</h5>
-                  <h6>description :{t.description}</h6>
+                  <Link to={`/todo/${t.id}`}>
+                    <h5>title : {t.title}</h5>
+                    <h6>description :{t.description}</h6>
+                  </Link>
                 </>
               );
             })}
