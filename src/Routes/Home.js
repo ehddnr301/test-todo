@@ -9,9 +9,8 @@ const Home = () => {
   const didMount = async () => {
     try {
       const { data: todo } = await todoApi.getAllTodo();
-      const { data } = await userApi1.user();
-      console.log(data);
       setTodo(todo);
+      console.log(todo);
       // todo.map(t => console.log(t.title));
     } catch {
       console.log("erro");
@@ -24,7 +23,10 @@ const Home = () => {
 
   return (
     <>
-      <form action="http://localhost:5000/todo/create" method="post">
+      <form
+        action="https://fathomless-temple-42089.herokuapp.com/todo/create"
+        method="post"
+      >
         <input type="text" name="title" placeholder="title" required></input>
         <input type="text" name="description" placeholder="description"></input>
         <input type="text" name="todo" placeholder="todo"></input>

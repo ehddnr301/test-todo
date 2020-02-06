@@ -9,12 +9,12 @@ const api1 = axios.create({
 });
 
 export const todoApi = {
-  getAllTodo: () => api1.get("todo/list"),
-  getTodoDetail: id => api1.get(`todo/${id}`),
+  getAllTodo: () => api.get("todo/list"),
+  getTodoDetail: id => api.get(`todo/${id}`),
   createTodo: () => api.post("todo")
 };
 
 export const userApi1 = {
-  userDetail: id => api1.get(`user/${id}`),
-  user: () => api1.get("user/user")
+  userDetail: id => api.get(`user/${id}`),
+  user: () => api.get("user/user")
 };

@@ -30,7 +30,7 @@ const Detail = props => {
   return (
     <div>
       <form
-        action={`http://localhost:5000/todo/${id}/updateTodo`}
+        action={`https://fathomless-temple-42089.herokuapp.com/todo/${id}/updateTodo`}
         method="post"
       >
         <input type="text" name="updateTodo" placeholder="Add Todo" required />
@@ -39,7 +39,7 @@ const Detail = props => {
 
       <form
         method="post"
-        action={`http://localhost:5000/todo/${id}/deleteTodo`}
+        action={`https://fathomless-temple-42089.herokuapp.com/todo/${id}/deleteTodo`}
       >
         <button type="submit">Delete</button>
       </form>
